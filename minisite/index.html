@@ -21,18 +21,20 @@
   }
   .myButton:hover {
   	background-color:#828282;
+    margin:10px 50px;
+    padding:22px 26px;
   }
   .myButton:active {
-  	position:relative;
-  	top:1px;
+    margin:20px 60px;
+    padding:12px 16px;
   }
   </style>
   </head>
 
 
-<button class="myButton" onclick="httpGetAsync('http://localhost:8080/mqtt/som3longurlintest/A/1/true')">Send A</button>
+<button class="myButton" onclick="httpGetAsync('http://192.168.178.21:8080/mqtt/som3longurlintest/A/1/true')">Send A</button>
 </br>
-<button class="myButton" onclick="httpGetAsync('http://localhost:8080/mqtt/som3longurlintest/B/1/true')">Send B</button>
+<button class="myButton" onclick="httpGetAsync('http://192.168.178.21:8080/mqtt/som3longurlintest/B/1/true')">Send B</button>
 
 <p id="demo"></p>
 

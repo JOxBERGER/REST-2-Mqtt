@@ -23,7 +23,7 @@ console.log('Server started! At http://localhost:' + port);
 
 
 app.get('/', function (req, res) {
-  res.send('Hello to the root!');
+  res.send('No Content @ Root. Try somthing like: http://[server url]:8080/mqtt/som3longurlintest/A/1/true instead');
 });
 
 // mini api. example: http://localhost:8080/api/mqtt?topic=drink&payload=wine&qos=1
@@ -32,8 +32,9 @@ app.get('/mqtt/:topic/:payload/:qos/:retain', function(req, res) {
   var mqttPayload = req.params.payload;
   var mqttQos = req.params.qos;
   var mqttRetain = req.params.retain;
+  var userIP = req.socket.remoteAddress;
 
-  var report = 'received topic: ' + mqttTopic + ' payload: ' + mqttPayload + ' QOS: ' + mqttQos + ' retain: ' + mqttRetain;
+  var report = 'received topic: ' + mqttTopic + ' payload: ' + mqttPayload + ' QOS: ' + mqttQos + ' retain: ' + mqttRetain + '  from: ' + userIP;
   res.send(report);
   console.log(report);
 

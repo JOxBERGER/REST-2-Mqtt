@@ -30,18 +30,17 @@
   </head>
 
 
-<button class="myButton" onclick="httpGetAsync('http://localhost:8080/mqtt/som3longurlintest/long/1/true')">Send</button>
+<button class="myButton" onclick="httpGetAsync('http://localhost:8080/mqtt/som3longurlintest/A/1/true')">Send A</button>
+</br>
+<button class="myButton" onclick="httpGetAsync('http://localhost:8080/mqtt/som3longurlintest/B/1/true')">Send B</button>
 
 <p id="demo"></p>
 
 <script>
-  function httpGetAsync(theUrl, callback)
+  function httpGetAsync(theUrl)
   {
       var xmlHttp = new XMLHttpRequest();
-      xmlHttp.onreadystatechange = function() {
-          if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-              callback(xmlHttp.responseText);
-      }
+
       xmlHttp.open("GET", theUrl, true); // true for asynchronous
       xmlHttp.send(null);
   }
